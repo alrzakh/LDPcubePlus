@@ -1,0 +1,33 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Project outputs (generated at runtime)
+*.png
+csv_output/
+plots/
+results/
+
+# Datasets (excluded from the repo; see Datasets/README.md for sourcing)
+# Adult.csv is included as a small default dataset; larger ones are excluded.
+Datasets/*.csv
+!Datasets/Adult.csv

@@ -1,0 +1,15 @@
+_base: "base.yaml"
+
+experiment:
+  epsilon: [1.0]            # True epsilon used in the experiment
+  repeats: 10               # Override with --repeat
+  protocols: ["all"]        # Override with --protocol
+  methods: ["all"]          # Override with --method
+  utility_metric: "l1"      # l1 | l2 | kl | emd
+
+binary_search:
+  run: true                # Set to true or use --run-bia flag to activate
+  runs: 10                  # How many times to repeat the binary search
+  epsilon_min: 0.1          # Search range lower bound
+  epsilon_max: 5.0          # Search range upper bound
+  tolerance: 0.001          # Convergence threshold

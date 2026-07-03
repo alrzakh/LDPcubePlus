@@ -1,0 +1,10 @@
+_base: "base.yaml"
+
+experiment:
+  epsilon: [0.5, 1.0, 2.0, 3.0, 4.0]     # Sweep. Override with --epsilon
+  repeats: 20                            # Override with --repeat
+  protocols: ["all"]                     # Override with --protocol
+  methods: ["all"]                       # Override with --method
+
+rank:
+  generate_plots: false                  # Set to true to produce rank correlation plots (Kendall Tau)

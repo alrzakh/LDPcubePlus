@@ -1,0 +1,18 @@
+_base: "base.yaml"
+
+experiment:
+  epsilon: [0.5, 1.0, 2.0, 3.0, 4.0]     # Sweep. Override with --epsilon
+  repeats: 10                            # Override with --repeat
+  protocols: ["rappor"]                  # Override with --protocol
+  methods: ["all"]                       # Override with --method
+
+adversarial:
+  num_malicious: 500                     # Override with --num-malicious
+  # How to select attack targets:
+  #   bottom_k  —> least frequent k items (default, from main.py)
+  #   top_k     —> most  frequent k items
+  #   all       —> entire domain (untargeted)
+  #   manual    —> provide explicit list in manual_targets below
+  target_selection: "top_k"
+  target_k: 10                           # k for bottom_k / top_k strategies
+  manual_targets: []                     # Used only when target_selection: manual

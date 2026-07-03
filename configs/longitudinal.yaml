@@ -1,0 +1,19 @@
+_base: "base.yaml"
+
+experiment:
+  epsilon: [3.0, 4.0]   # epsilon sweep. Override with --epsilon
+  repeats: 1                            # repeat whole simulation & average. Override with --repeat
+  protocols: ["all"]                    # grr blh olh rappor oue ss  —  or "all". Override with --protocol
+
+longitudinal:
+  observations: [1, 3, 5, 7, 9, 11, 13, 15]   # number of longitudinal observations n. Override with --observations
+  consistency: 1.0          # fraction of timestamps the true value stays constant. Override with --consistency
+  sample_size: null         # users sampled from the dataset (null = use all). Override with --sample-size
+
+  # Bayesian prior Pr[v] used in the attack. One or more of:
+  #   uniform   — no prior / uniform distribution
+  #   no_pp     — prior from the aggregate estimate f̂, WITHOUT post-processing
+  #   base_pos | norm | norm_cut | norm_sub | norm_mul | power | power_ns
+  #             — prior from the POST-PROCESSED estimate f̃ (the named PP method)
+  # Listing several evaluates them side by side so the effect of PP is visible.
+  priors: ["uniform", "no_pp", "norm_sub", "norm_mul", "norm_cut"]   # Override with --priors

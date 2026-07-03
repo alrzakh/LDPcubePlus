@@ -1,0 +1,19 @@
+# Frequency estimation
+python main.py estimate --config configs/estimation.yaml
+
+# Quick single-protocol test without editing the config
+python main.py estimate --config configs/estimation.yaml \
+    --protocol grr --epsilon 1.0 --repeat 5
+
+# MGA poisoning attack sweep
+python main.py poisoning --config configs/mga.yaml \
+    --num-malicious 1000 --save-plots
+
+# Budget inference with binary search
+python main.py bia --config configs/bia.yaml --run-bia --bia-runs 5
+
+# Rank preservation 
+python main.py rank --config configs/rank.yaml
+
+# Longitudinal Bayesian attack
+python main.py longitudinal --config configs/longitudinal.yaml

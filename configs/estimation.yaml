@@ -1,0 +1,8 @@
+_base: "base.yaml"
+
+experiment:
+  epsilon: [0.5, 1.0, 2.0, 3.0, 4.0]   # Swept for per-ε tables and the error-vs-ε plot. Override with --epsilon
+  repeats: 20               # Override with --repeat
+  protocols: ["all"]        # Or e.g. ["olh", "grr"]. Override with --protocol
+  methods: ["all"]          # Or e.g. ["norm", "power"]. Override with --method
+  utility_metric: "l1"      # l1 | l2 | kl | emd — also the plotted metric. Override with --metric

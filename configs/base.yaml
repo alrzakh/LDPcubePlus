@@ -1,0 +1,12 @@
+dataset:
+  path: "Datasets/Adult.csv"          # Required — set in task config or via --dataset
+
+threading:
+  num_threads: 31                      # Override with --threads
+
+output:
+  verbose: true
+  save_csv: false                     # Set to true to write results to CSV
+  csv_dir: "results"                  # Directory for CSV output files
+  plot_dir: "plots"                   # Directory for saved plots
+  save_plots: true                   # Set to true to save plots to disk
